@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  /*
+  function demo() {
+    let myPromise = new Promise((res,rej)=>{
+      setTimeout(()=>{
+        res('ok')
+      },1000)
+    })
+    return myPromise
+  }
+
+  async function demo2() {
+    let a = await demo()
+    console.log('@@@', a, '@@@')
+    //async会影响被返回的a[即影响了加async的函数的返回值]，下面直接打印demo2()会发现输出的是Promise()，表示这是一个实例对象，也就是虽然我们返回的是a，但是获取的时候却被包裹在一个实例对象中，想要获取这个a还必须通过then来获取
+    return a
+  }
+
+  ;(async ()=>{
+    let result = await demo2()
+    console.log(result)
+  })()*/
+
+  async function f() {
+    return 1
+  }
+  let a = f()
+  console.log(a)  //---> Promise
+  ;(async()=>{
+    let a = await f()
+    console.log(a) //---> 1
+  })()
+
+</script>
+</body>
+</html>
